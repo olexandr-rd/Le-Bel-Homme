@@ -16,6 +16,7 @@ h2 {
 
     font: bold 20px/#{$height} var.$font-family;
     text-transform: uppercase;
+    text-decoration: none;
 
     border: none;
     border-radius: 14px;
@@ -25,6 +26,8 @@ h2 {
     color: var.$white;
     background-color: $bg-color;
     box-shadow: 5px 5px 50px rgba($bg-color, 0.3);
+
+    cursor: pointer;
 }
 
 #subscribe-button {
@@ -63,6 +66,29 @@ h2 {
         gap: var.$gap;
         align-items: center;
     }
+
+    @media screen and (min-width: 1024px) {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+            text-align: start;
+            max-width: 45%;
+        }
+
+        #intro-right {
+            max-width: 35%;
+            align-items: end;
+            gap: auto;
+
+            h2 {
+                text-align: end;
+                margin: 0;
+            }
+        }
+    }
 }
 
 .about-us p {
@@ -72,7 +98,6 @@ h2 {
 $gap: clamp(30px, 5vw, 50px);
 
 .bestsellers {
-
     padding-right: 0;
     padding-left: 0;
     display: flex;
@@ -97,6 +122,7 @@ $gap: clamp(30px, 5vw, 50px);
 
     .price-volume {
         font-size: 90%;
+        gap: 10px
     }
 
     &::-webkit-scrollbar {
@@ -142,12 +168,12 @@ $gap: clamp(30px, 5vw, 50px);
     }
 
     &>*,
+    h3,
     p {
         margin: 0;
     }
 
-    .item-img {
-        z-index: -1;
+    .img {
         filter: drop-shadow(15px 15px 10px rgba(var.$black, 0.5));
         width: 100%;
     }
@@ -156,26 +182,25 @@ $gap: clamp(30px, 5vw, 50px);
         color: var.$black;
         text-decoration: none;
     }
-}
 
-.item-name {
-    font-weight: bold;
-}
+    .name {
+        font-weight: bold;
+    }
 
-.item-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var.$gap / 2;
-    width: 100%;
+    .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: calc(var.$gap / 2);
+        width: 100%;
+    }
 }
 
 .price-volume {
-    &>* {
+    p {
         margin: 0;
     }
 
-    gap: 10px;
     display: flex;
     justify-content: space-between;
 }
@@ -284,29 +309,6 @@ $gap: clamp(30px, 5vw, 50px);
             align-self: flex-start;
             width: clamp(180px, 20%, 410px);
             font-size: clamp(75%, 1vw, 100%);
-        }
-    }
-
-    .intro {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: space-between;
-
-        h1 {
-            text-align: start;
-            max-width: 45%;
-        }
-
-        #intro-right {
-            max-width: 35%;
-            align-items: end;
-            gap: auto;
-
-            h2 {
-                text-align: end;
-                margin: 0;
-            }
         }
     }
 }

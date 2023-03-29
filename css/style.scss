@@ -1,5 +1,6 @@
-@use 'landing';
 @use 'variables' as var;
+@use 'landing';
+@use 'item';
 
 html,
 body {
@@ -45,6 +46,7 @@ footer {
 }
 
 header {
+    z-index: 1;
     padding: 0 var.$side-padding;
     position: fixed;
     top: 0;
@@ -146,7 +148,7 @@ header {
     }
 }
 
-.content {
+main {
     margin: 0;
     flex: 1 0 auto;
     text-align: center;
@@ -187,6 +189,10 @@ footer {
         gap: 20px;
     }
 
+    nav {
+        flex-wrap: wrap;
+    }
+
     & > div {
         display: flex;
         flex-direction: column;
@@ -216,7 +222,7 @@ footer {
         flex-direction: row;
         & > div {
             width: auto;
-            max-width: 250px;
+            max-width: 275px;
         }
         nav {
             flex-direction: column;
@@ -242,6 +248,9 @@ footer {
         font-family: "Fontawesome";
         content: '\f061';
     }
+    .social, button {
+        font-size: 20px;
+    }
 
     button,
     input {
@@ -263,7 +272,7 @@ footer {
         width: 30px;
         text-align: center;
         background: var.$bisque;
-        font-size: 125%;
+        // font-size: 125%;
         cursor: pointer;
     }
 }
