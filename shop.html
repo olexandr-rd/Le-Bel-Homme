@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Le Bel Homme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/72cdf14cdd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="site-title">
+            <img src="img/Le Bel Homme.svg" alt="Логотип Le Bel Homme" class="site-logo">
+        </a>
+        <button id="menu-button" onclick="showMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="menu">
+            <a href="shop.html">Аромати</a>
+            <a href="info.html">Інфо</a>
+            <a href="cart.html">Кошик</a>
+            <a>Вхід</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="intro shop">
+            <h1>Аромати</h1>
+        </section>
+
+        <section id="main-shop">
+
+            <div id="sorting">
+                <button class="sort button" onclick="showSorting('sort-form')"><span>Фільтр</span></button>
+                <button class="brands button" onclick="showSorting('brands-form')">Бренди</button>
+                <button class="search button" onclick="showSorting('search-form')"><span>Пошук</span></button>
+            </div>
+
+            <div id="sorting-blocks">
+                <form action="" id="sort-form">
+                    <input type="radio" id="rating" name="sort-way" value="rating" checked>
+                    <label for="rating">За рейтингом</label><br>
+
+                    <input type="radio" id="ascending" name="sort-way" value="ascending">
+                    <label for="ascending">За зростанням ціни</label><br>
+
+                    <input type="radio" id="descending" name="sort-way" value="descending">
+                    <label for="descending">За спаданням ціни</label> 
+                </form>
+
+                <form id="brands-form">
+                    <input type="checkbox" id="chanel" name="chanel" checked>
+                    <label for="chanel">Chanel</label>
+
+                    <input type="checkbox" id="dior" name="dior">
+                    <label for="dior">Dior</label>
+
+                    <input type="checkbox" id="tom-ford" name="tom-ford">
+                    <label for="tom-ford">Tom Ford</label>
+
+                    <input type="checkbox" id="versace" name="versace">
+                    <label for="versace">Versace</label>
+                </form>
+
+                <form id="search-form">
+                    <input type="text" placeholder="Назва парфуму..." required>
+                </form>
+            </div>
+
+            <div class="perfumes">
+
+                <article class="item">
+                    <img src="img/perfumes/layton-eau-de-parfum.png" alt="Layton eau de parfum" class="img">
+                    <a href="item.html">
+                        <h3 class="name">Layton eau de parfum</h3>
+                    </a>
+                    <div class="bottom">
+                        <div class="price-volume">
+                            <p>88 EUR</p>
+                            <p>|</p>
+                            <p>100 ml</p>
+                        </div>
+                        <button class="button cart"><span class="fa-sr-only">Придбати</span></button>
+                    </div>
+                </article>
+
+                <article class="item">
+                    <img src="img/perfumes/bleu-de-chanel.png" alt="Blue de Chanel" class="img">
+                    <a href="item.html">
+                        <h3 class="name">Bleu de Chanel</h3>
+                    </a>
+                    <div class="bottom">
+                        <div class="price-volume">
+                            <p>90 EUR</p>
+                            <p>|</p>
+                            <p>50 ml</p>
+                        </div>
+                        <button class="button cart"><span class="fa-sr-only">Придбати</span></button>
+                    </div>
+                </article>
+
+                <article class="item">
+                    <img src="img/perfumes/Guerlain-L’Homme-Idéal.png" alt="Guerlain L’Homme Idéal" class="img">
+                    <a href="item.html">
+                        <h3 class="name">Guerlain L’Homme Idéal</h3>
+                    </a>
+                    <div class="bottom">
+                        <div class="price-volume">
+                            <p>92 EUR</p>
+                            <p>|</p>
+                            <p>75 ml</p>
+                        </div>
+                        <button class="button cart"><span class="fa-sr-only">Придбати</span></button>
+                    </div>
+                </article>
+
+                <article class="item">
+                    <img src="img/perfumes/GIVENCHY-GENTLEMAN.png" alt="GIVENCHY GENTLEMAN" class="img">
+                    <a href="item.html">
+                        <h3 class="name">Givency Gentelman</h3>
+                    </a>
+                    <div class="bottom">
+                        <div class="price-volume">
+                            <p>109 EUR</p>
+                            <p>|</p>
+                            <p>100 ml</p>
+                        </div>
+                        <button class="button cart"><span class="fa-sr-only">Придбати</span></button>
+                    </div>
+                </article>
+
+                <article class="item">
+                    <img src="img/perfumes/layton-eau-de-parfum.png" alt="Layton eau de parfum" class="img">
+                    <a href="item.html">
+                        <h3 class="name">Layton eau de parfum</h3>
+                    </a>
+                    <div class="bottom">
+                        <div class="price-volume">
+                            <p>88 EUR</p>
+                            <p>|</p>
+                            <p>100 ml</p>
+                        </div>
+                        <button class="button cart"><span class="fa-sr-only">Придбати</span></button>
+                    </div>
+                </article>
+
+                <article class="item">
+                    <img src="img/perfumes/bleu-de-chanel.png" alt="Blue de Chanel" class="img">
+                    <a href="item.html">
+                        <h3 class="name">Bleu de Chanel</h3>
+                    </a>
+                    <div class="bottom">
+                        <div class="price-volume">
+                            <p>90 EUR</p>
+                            <p>|</p>
+                            <p>50 ml</p>
+                        </div>
+                        <button class="button cart"><span class="fa-sr-only">Придбати</span></button>
+                    </div>
+                </article>
+
+                <article class="item">
+                    <img src="img/perfumes/Guerlain-L’Homme-Idéal.png" alt="Guerlain L’Homme Idéal" class="img">
+                    <a href="item.html">
+                        <h3 class="name">Guerlain L’Homme Idéal</h3>
+                    </a>
+                    <div class="bottom">
+                        <div class="price-volume">
+                            <p>92 EUR</p>
+                            <p>|</p>
+                            <p>75 ml</p>
+                        </div>
+                        <button class="button cart"><span class="fa-sr-only">Придбати</span></button>
+                    </div>
+                </article>
+
+                <article class="item">
+                    <img src="img/perfumes/GIVENCHY-GENTLEMAN.png" alt="GIVENCHY GENTLEMAN" class="img">
+                    <a href="item.html">
+                        <h3 class="name">Givency Gentelman</h3>
+                    </a>
+                    <div class="bottom">
+                        <div class="price-volume">
+                            <p>109 EUR</p>
+                            <p>|</p>
+                            <p>100 ml</p>
+                        </div>
+                        <button class="button cart"><span class="fa-sr-only">Придбати</span></button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div>
+            <img src="img/Le Bel Homme.svg" alt="Логотип Le Bel Homme" class="site-logo">
+            <div class="social">
+                <a href="https://www.facebook.com/" target="_blank" class="fa-brands fa-facebook-f"><span
+                        class="fa-sr-only">Facebook</span></a>
+                <a href="https://www.instagram.com/" target="_blank" class="fa-brands fa-instagram"><span
+                        class="fa-sr-only">Instagram</span></a>
+                <a href="https://www.twitter.com/" target="_blank" class="fa-brands fa-twitter"><span
+                        class="fa-sr-only">Twitter</span></a>
+                <a href="https://web.telegram.org/k/" target="_blank" class="fa-brands fa-telegram"><span
+                        class="fa-sr-only">Telegram</span></a>
+            </div>
+            <p class="copyright">© 2023 Le Bel Homme</p>
+        </div>
+
+        <div>
+            <h3>Навігація</h3>
+            <nav>
+                <a href="index.html">Головна</a>
+                <a href="shop.html">Аромати</a>
+                <a href="info.html">Інфо</a>
+                <a href="cart.html">Кошик</a>
+            </nav>
+        </div>
+
+        <div>
+            <h3>Оновлення</h3>
+            <p id="subscribe-message">Сповіщатимемо тебе про нові товари й надсилатимемо поради</p>
+            <form id="subscribe" onsubmit="subscribe(); return false">
+                <label for="subscribe-email">Е-пошта</label>
+                <input type="email" name="email" id="subscribe-email" placeholder="lebel@homme.com" required>
+                <button type="submit" id="subscribe-button"><span class="fa-sr-only">Відправити</span></button>
+            </form>
+        </div>
+    </footer>
+</body>
+
+</html>

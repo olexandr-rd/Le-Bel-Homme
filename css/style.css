@@ -84,7 +84,6 @@ h2 {
   justify-items: center;
 }
 .perfumes .price-volume {
-  font-size: 125%;
   gap: 10px;
 }
 @media screen and (min-width: 768px) {
@@ -143,7 +142,7 @@ h2 {
 }
 @media screen and (max-width: 1023px) {
   .item .name {
-    font-size: 115%;
+    font-size: 125%;
   }
 }
 .item .bottom {
@@ -256,6 +255,91 @@ h2 {
     font-size: clamp(75%, 1vw, 100%);
   }
 }
+.shop {
+  background: url("../img/backgrounds/shop-bg.png") no-repeat center;
+  background-size: cover;
+}
+
+#main-shop {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+
+#main-shop #sorting {
+  width: 100%;
+  display: flex;
+  gap: clamp(10px, 5vw, 50px);
+  justify-content: space-between;
+}
+#main-shop #sorting .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: #ffffff;
+  color: #000000;
+}
+#main-shop #sorting .button span {
+  font-family: "Montserrat", sans-serif;
+  display: none;
+}
+#main-shop #sorting .brands {
+  width: calc(100% - 110px - 20px);
+}
+@media screen and (min-width: 768px) {
+  #main-shop #sorting .brands {
+    width: calc(100% - 400px - 20px);
+  }
+}
+#main-shop #sorting .sort, #main-shop #sorting .search {
+  font-family: "Fontawesome";
+  width: 55px;
+}
+@media screen and (min-width: 768px) {
+  #main-shop #sorting .sort, #main-shop #sorting .search {
+    width: 200px;
+  }
+  #main-shop #sorting .sort span, #main-shop #sorting .search span {
+    display: inline-block;
+  }
+}
+#main-shop #sorting .sort::before {
+  content: "\f0b0";
+}
+#main-shop #sorting .search::before {
+  content: "\f002";
+}
+
+#sorting-blocks {
+  width: 100%;
+}
+
+#sorting-blocks form {
+  display: none;
+  border-radius: 14px;
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+}
+#sorting-blocks form input[type=text] {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  font-size: 120%;
+  padding: 5px;
+  height: 50px;
+  font-family: "Montserrat", sans-serif;
+}
+#sorting-blocks form input[type=text]::-moz-placeholder {
+  color: #000000;
+}
+#sorting-blocks form input[type=text]::placeholder {
+  color: #000000;
+}
+
 .info {
   background: url("../img/backgrounds/info-bg.png") no-repeat 44%;
   background-size: cover;
@@ -385,17 +469,17 @@ h2 {
   font: 600 150% "Montserrat", sans-serif;
 }
 
-.bottom {
+#cart-items .item .bottom {
   display: flex;
   align-items: center;
 }
-.bottom .button,
-.bottom input {
+#cart-items .item .bottom .button,
+#cart-items .item .bottom input {
   height: 40px;
   border-radius: 7px;
   box-shadow: 0 0 70px rgba(0, 0, 0, 0.3);
 }
-.bottom .button {
+#cart-items .item .bottom .button {
   display: flex;
   align-items: center;
   justify-content: center;

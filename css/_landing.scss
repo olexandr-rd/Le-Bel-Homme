@@ -99,7 +99,6 @@ $gap: clamp(30px, 5vw, 50px);
     justify-items: center;
 
     .price-volume {
-        font-size: 125%;
         gap: 10px;
     }
 
@@ -161,7 +160,7 @@ $gap: clamp(30px, 5vw, 50px);
     .name {
         font-weight: bold;
         @media screen and (max-width: 1023px) {
-            font-size: 115%;   
+            font-size: 125%;   
         }
     }
 
