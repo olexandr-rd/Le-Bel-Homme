@@ -1,7 +1,7 @@
 @use 'variables' as var;
 
 .item-wrapper {
-    padding: calc(var.$main-height + var.$side-padding) var.$side-padding var.$side-padding;
+    padding: calc(var.$main-height * 2) var.$side-padding var.$main-height;
     background-color: var.$bisque;
     min-height: 100%;
 }

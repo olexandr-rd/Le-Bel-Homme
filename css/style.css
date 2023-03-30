@@ -79,12 +79,12 @@ h2 {
   max-width: 100%;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: clamp(30px, 5vw, 50px);
+  gap: 50px;
   grid-auto-flow: row;
   justify-items: center;
 }
 .perfumes .price-volume {
-  font-size: 90%;
+  font-size: 125%;
   gap: 10px;
 }
 @media screen and (min-width: 768px) {
@@ -95,6 +95,10 @@ h2 {
 @media screen and (min-width: 1024px) {
   .perfumes {
     grid-template-columns: repeat(4, 1fr);
+    gap: clamp(30px, 5vw, 50px);
+  }
+  .perfumes .price-volume {
+    font-size: 80%;
   }
 }
 .perfumes .cart {
@@ -126,6 +130,7 @@ h2 {
   margin: 0;
 }
 .item .img {
+  max-width: 320px;
   filter: drop-shadow(15px 15px 10px rgba(0, 0, 0, 0.5));
   width: 100%;
 }
@@ -135,6 +140,11 @@ h2 {
 }
 .item .name {
   font-weight: bold;
+}
+@media screen and (max-width: 1023px) {
+  .item .name {
+    font-size: 115%;
+  }
 }
 .item .bottom {
   display: flex;
@@ -310,8 +320,141 @@ h2 {
   color: #000000;
 }
 
+.shop-cart {
+  background: url("../img/backgrounds/cart-bg.png") no-repeat center;
+  background-size: cover;
+}
+
+#cart-body {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+@media screen and (min-width: 1024px) {
+  #cart-body {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+#cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  font-size: 90%;
+}
+@media screen and (min-width: 1024px) {
+  #cart-items {
+    gap: 75px;
+  }
+}
+
+#cart-items .item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+#cart-items .item .img {
+  max-width: 250px;
+}
+@media screen and (min-width: 540px) {
+  #cart-items .item {
+    width: clamp(450px, 100%, 900px);
+    justify-content: flex-start;
+    text-align: left;
+    flex-direction: row;
+  }
+}
+#cart-items .item .column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  align-self: stretch;
+}
+#cart-items .item .name {
+  font-size: 170%;
+}
+#cart-items .item .price-volume {
+  font: 600 150% "Montserrat", sans-serif;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+}
+.bottom .button,
+.bottom input {
+  height: 40px;
+  border-radius: 7px;
+  box-shadow: 0 0 70px rgba(0, 0, 0, 0.3);
+}
+.bottom .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Fontawesome";
+  width: 40px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+}
+.controls input {
+  width: 60px;
+  border: none;
+  outline: none;
+  font: bold 20px "Montserrat", sans-serif;
+  text-align: center;
+}
+
+#order {
+  font-size: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+#order p {
+  font-size: 200%;
+  font-weight: 700;
+  margin: 0;
+}
+#order .button {
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  padding: 0 50px;
+}
+@media screen and (min-width: 1024px) {
+  #order {
+    position: sticky;
+    top: 160px;
+    align-self: flex-start;
+    z-index: 1;
+  }
+}
+
+.delete::after {
+  content: "\f1f8";
+}
+
+.plus::after {
+  content: "+";
+}
+
+.minus::after {
+  content: "\f068";
+}
+
 .item-wrapper {
-  padding: calc(80px + clamp(30px, 5vw, 80px)) clamp(30px, 5vw, 80px) clamp(30px, 5vw, 80px);
+  padding: 160px clamp(30px, 5vw, 80px) 80px;
   background-color: #f8ede3;
   min-height: 100%;
 }
@@ -382,7 +525,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -484,6 +629,8 @@ header.open {
 #menu a {
   color: #ffffff;
   display: block;
+  width: -moz-fit-content;
+  width: fit-content;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
@@ -504,6 +651,7 @@ header.open {
   position: absolute;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 20px;
   z-index: 1;
@@ -637,7 +785,8 @@ footer #subscribe-button::after {
   font-family: "Fontawesome";
   content: "\f061";
 }
-footer .social, footer button {
+footer .social,
+footer button {
   font-size: 20px;
 }
 footer button,

@@ -89,81 +89,18 @@ $gap: clamp(30px, 5vw, 50px);
     align-items: center;
 }
 
-// .perfumes {
-//     width: 100%;
-//     max-width: 100%;
-//     display: grid;
-//     grid-template-columns: repeat(4, minmax(0, calc(25% - $gap / 2)));
-//     grid-gap: $gap;
-//     grid-auto-flow: column;
-
-//     overflow-x: auto;
-//     scroll-behavior: smooth;
-//     overflow-y: hidden;
-//     &::-webkit-scrollbar {
-//         display: none;
-//     }
-
-//     &::-webkit-scrollbar {
-//         display: none;
-//     }
-
-//     &::-ms-overflow-style {
-//         display: none;
-//     }
-
-//     &::-webkit-scrollbar {
-//         display: none;
-//     }
-
-//     scrollbar-width: none;
-
-//     &:before,
-//     &:after {
-//         content: '';
-//         width: calc(var.$side-padding - $gap);
-//         // overflow-x: hidden;
-//     }
-
-//     .price-volume {
-//         font-size: 90%;
-//         gap: 10px
-//     }
-
-//     &:first-child {
-//         margin-right: -50px;
-//     }
-
-//     .cart {
-//         margin: 0;
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//         font-size: 18px;
-//         width: 40px;
-//         height: 40px;
-//         border-radius: 7px;
-//         box-shadow: none;
-
-//         &::after {
-//             font-family: 'Fontawesome';
-//             content: '\f07a';
-//         }
-//     }
-// }
-
 .perfumes {
     width: 100%;
     max-width: 100%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: $gap;
+    gap: var.$gap;
     grid-auto-flow: row;
     justify-items: center;
 
     .price-volume {
-        font-size: 90%;
-        gap: 10px
+        font-size: 125%;
+        gap: 10px;
     }
 
     @media screen and (min-width: 768px) {
@@ -172,6 +109,11 @@ $gap: clamp(30px, 5vw, 50px);
 
     @media screen and (min-width: 1024px) {
         grid-template-columns: repeat(4, 1fr);
+        gap: $gap;
+
+        .price-volume {
+            font-size: 80%;
+        }
     }
     
     .cart {
@@ -206,6 +148,7 @@ $gap: clamp(30px, 5vw, 50px);
     }
 
     .img {
+        max-width: 320px;
         filter: drop-shadow(15px 15px 10px rgba(var.$black, 0.5));
         width: 100%;
     }
@@ -217,6 +160,9 @@ $gap: clamp(30px, 5vw, 50px);
 
     .name {
         font-weight: bold;
+        @media screen and (max-width: 1023px) {
+            font-size: 115%;   
+        }
     }
 
     .bottom {
