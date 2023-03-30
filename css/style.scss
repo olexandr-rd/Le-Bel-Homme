@@ -1,6 +1,8 @@
 @use 'variables' as var;
 @use 'landing';
+@use 'info';
 @use 'item';
+
 
 html,
 body {
@@ -33,15 +35,15 @@ body {
 
 header,
 footer {
-    background: #000000;
+    background: var.$black;
     margin: 0;
-    color: #ffffff;
+    color: var.$white;
     width: 100%;
     display: flex;
 
     a {
         text-decoration: none;
-        color: #ffffff;
+        color: var.$white;
     }
 }
 
@@ -60,7 +62,7 @@ header {
     }
 
     &.open {
-        background: #000000;
+        background: var.$black;
     }
 }
 
@@ -79,7 +81,7 @@ header {
         width: 26px;
         height: 5px;
         border-radius: 2px;
-        background-color: #ffffff;
+        background-color: var.$white;
         -webkit-transition: 0.3s;
         transition: 0.3s;
     }
@@ -114,19 +116,23 @@ header {
     display: none;
 
     a {
-        color: #ffffff;
+        color: var.$white;
         display: block;
         font-weight: 700;
         text-align: center;
         text-transform: uppercase;
         cursor: pointer;
+
+        @media screen and (max-width: 1024px) {
+            font-size: 150%;
+        }
     }
 
     &.show-menu {
-        background: #000000;
+        background: var.$black;
         width: 100vw;
         height: calc(100vh - var.$main-height);
-        color: #ffffff;
+        color: var.$white;
         top: var.$main-height;
         left: 0;
         position: absolute;
@@ -168,9 +174,43 @@ section {
     }
 
     &:nth-of-type(even) {
-        background: #f8ede3;
-        color: #000000;
+        background: var.$bisque;
+        color: var.$black;
     }
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    h1 {
+        min-width: 100%;
+        color: var.$white;
+        font-size: 350%;
+        text-transform: uppercase;
+    }
+}
+
+.button {
+    $height: 55px;
+    height: $height;
+    width: 250px;
+
+    font: bold 20px/#{$height} var.$font-family;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    border: none;
+    border-radius: 14px;
+    display: inline-block;
+
+    $bg-color: var.$black;
+    color: var.$white;
+    background-color: $bg-color;
+    box-shadow: 5px 5px 50px rgba($bg-color, 0.3);
+
+    cursor: pointer;
 }
 
 footer {
@@ -272,7 +312,6 @@ footer {
         width: 30px;
         text-align: center;
         background: var.$bisque;
-        // font-size: 125%;
         cursor: pointer;
     }
 }

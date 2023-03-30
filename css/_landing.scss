@@ -9,38 +9,18 @@ h2 {
     font-size: 200%;
 }
 
-.button {
-    $height: 55px;
-    height: $height;
-    width: 250px;
-
-    font: bold 20px/#{$height} var.$font-family;
-    text-transform: uppercase;
-    text-decoration: none;
-
-    border: none;
-    border-radius: 14px;
-    display: inline-block;
-
-    $bg-color: var.$black;
-    color: var.$white;
-    background-color: $bg-color;
-    box-shadow: 5px 5px 50px rgba($bg-color, 0.3);
-
-    cursor: pointer;
-}
-
 #subscribe-button {
     display: flex;
     place-content: center;
     place-items: center;
 }
 
-.intro {
+.landing {
     $gap: 3rem;
 
     background: url("../img/backgrounds/landing-bg.jpeg") no-repeat 80%;
     background-size: cover;
+
     color: var.$white;
     text-align: center;
     justify-content: center;
@@ -52,6 +32,11 @@ h2 {
         $bg-color: var.$bisque;
         background-color: $bg-color;
         box-shadow: 5px 5px 50px rgba($bg-color, 0.3);
+    }
+
+    
+    h1 {
+        font-size: clamp(170%, 5vw, 250%);
     }
 
     h2 {
@@ -264,7 +249,7 @@ $gap: clamp(30px, 5vw, 50px);
     width: clamp(350px, 33%, 587px);
     max-height: 880px;
     border-radius: 14px;
-    box-shadow: 0px 0px 50px rgba(var.$black, 0.5);
+    box-shadow: var.$img-shadow;
 
     @media screen and (min-width: 1024px) {
         display: block;

@@ -7,28 +7,13 @@ h2 {
   font-size: 200%;
 }
 
-.button {
-  height: 55px;
-  width: 250px;
-  font: bold 20px/55px "Montserrat", sans-serif;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: none;
-  border-radius: 14px;
-  display: inline-block;
-  color: #ffffff;
-  background-color: #000000;
-  box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-}
-
 #subscribe-button {
   display: flex;
   place-content: center;
   place-items: center;
 }
 
-.intro {
+.landing {
   background: url("../img/backgrounds/landing-bg.jpeg") no-repeat 80%;
   background-size: cover;
   color: #ffffff;
@@ -37,16 +22,19 @@ h2 {
   flex-direction: column;
   gap: 3rem;
 }
-.intro .button {
+.landing .button {
   color: #000000;
   background-color: #f8ede3;
   box-shadow: 5px 5px 50px rgba(248, 237, 227, 0.3);
 }
-.intro h2 {
+.landing h1 {
+  font-size: clamp(170%, 5vw, 250%);
+}
+.landing h2 {
   font-size: 130%;
   font-weight: 600;
 }
-.intro #intro-right {
+.landing #intro-right {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -54,22 +42,22 @@ h2 {
   align-items: center;
 }
 @media screen and (min-width: 1024px) {
-  .intro {
+  .landing {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
   }
-  .intro h1 {
+  .landing h1 {
     text-align: start;
     max-width: 45%;
   }
-  .intro #intro-right {
+  .landing #intro-right {
     max-width: 35%;
     align-items: end;
     gap: auto;
   }
-  .intro #intro-right h2 {
+  .landing #intro-right h2 {
     text-align: end;
     margin: 0;
   }
@@ -227,7 +215,7 @@ h2 {
   width: clamp(350px, 33%, 587px);
   max-height: 880px;
   border-radius: 14px;
-  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.3);
 }
 @media screen and (min-width: 1024px) {
   .right-img {
@@ -268,6 +256,70 @@ h2 {
     font-size: clamp(75%, 1vw, 100%);
   }
 }
+.info {
+  background: url("../img/backgrounds/info-bg.png") no-repeat 44%;
+  background-size: cover;
+}
+
+#info-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  font-size: 100%;
+}
+#info-cards article {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+#info-cards article > * {
+  margin: 0;
+}
+#info-cards #delivery,
+#info-cards #pay {
+  max-width: 400px;
+}
+@media screen and (min-width: 768px) {
+  #info-cards #delivery,
+  #info-cards #pay {
+    max-width: 500px;
+    width: clamp(250px, 40%, 500px);
+  }
+}
+#info-cards .img {
+  width: 100%;
+  aspect-ratio: 7/8;
+  border-radius: 14px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+}
+@media screen and (min-width: 768px) {
+  #info-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 80px calc(clamp(30px, 5vw, 80px) * 2);
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+#delivery .img {
+  background: url("../img/delivery.png") no-repeat 44%;
+  background-size: cover;
+}
+
+#pay .img {
+  background: url("../img/card-pay.png") no-repeat center;
+  background-size: cover;
+}
+
+#contacts {
+  width: clamp(250px, 100%, 1000px);
+}
+#contacts a {
+  color: #000000;
+}
+
 .item-wrapper {
   padding: calc(80px + clamp(30px, 5vw, 80px)) clamp(30px, 5vw, 80px) clamp(30px, 5vw, 80px);
   background-color: #f8ede3;
@@ -442,6 +494,11 @@ header.open {
   text-transform: uppercase;
   cursor: pointer;
 }
+@media screen and (max-width: 1024px) {
+  #menu a {
+    font-size: 150%;
+  }
+}
 #menu.show-menu {
   background: #000000;
   width: 100vw;
@@ -489,6 +546,33 @@ section:first-of-type {
 section:nth-of-type(even) {
   background: #f8ede3;
   color: #000000;
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.intro h1 {
+  min-width: 100%;
+  color: #ffffff;
+  font-size: 350%;
+  text-transform: uppercase;
+}
+
+.button {
+  height: 55px;
+  width: 250px;
+  font: bold 20px/55px "Montserrat", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: 14px;
+  display: inline-block;
+  color: #ffffff;
+  background-color: #000000;
+  box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 footer {
